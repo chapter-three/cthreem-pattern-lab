@@ -1,18 +1,27 @@
-[![Build Status](https://travis-ci.org/pattern-lab/edition-php-drupal-standard.svg?branch=master)](https://travis-ci.org/pattern-lab/edition-php-drupal-standard)
+# Pattern Lab for the CThreem Drupal 8 theme
 
-# Pattern Lab Twig Standard Edition for Drupal 
+This is a fork of the [Standard Edition for Drupal](https://github.com/pattern-lab/edition-php-drupal-standard), but modified to be used along side Chapter Three's [CThreem](https://github.com/chapter-three/cthreem) Drupal 8 theme.
 
 The Standard Edition for Drupal gives developers and designers a clean and stable base from which to develop a Drupal compatible pattern library.
 
-## Prerequistes 
+## Prerequistes
 
 - [`composer`](https://getcomposer.org)
 
 ## First Time Install
 
-1. Run `composer create-project pattern-lab/edition-drupal-standard FOLDERNAME` (Assuming you wanted it in a directory called `FOLDERNAME`).
-1. Select a starterkit from menu. If asked about replacing files, do it.
-1. Commit new files generated.
+Typically, you'll want to have Pattern Lab files placed inside the theme in a directory called `pattern-lab`. To do so (and it doesn't already exist), from the root of the theme directory:
+
+```bash
+composer create-project chapter-three/cthreem-pattern-lab pattern-lab
+```
+
+For convenience, it's nice to surface the `pattern-lab/source` directory since you'll be working in it often. Assuming you want a directory called `components` (and it doesn't already exist):
+
+```bash
+mv pattern-lab/source components
+ln -s components pattern-lab/source
+```
 
 ## Using It
 
@@ -42,24 +51,13 @@ You can use PHP's built-in web server to review your Pattern Lab project in a br
 
 Then open [http://localhost:8080](http://localhost:8080) in your browser.
 
-### Install a StarterKit
-
-To install a near-empty StarterKit as a starting point for your project type:
-
-    php core/console --starterkit --init
-
-To install a specific StarterKit from GitHub type:
-
-    php core/console --starterkit --install <starterkit-vendor/starterkit-name>
-
 ### Updating Pattern Lab
 
 	composer update
 
 ## Other Documentation
 
-These are crucial pieces that contains documentation that is good to understand:
-
+- [Official Docs](http://patternlab.io/docs/index.html)
 - [`pattern-lab/patternengine-twig`](https://github.com/pattern-lab/patternengine-php-twig)
 - [`aleksip/plugin-data-transform`](https://github.com/aleksip/plugin-data-transform)
 - [Twig templating language](http://twig.sensiolabs.org/documentation)
